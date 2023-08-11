@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model products {
+  id                Int       @id(map: "Products_pkey")
+  name              String?
+  description       String?
+  image             String?
+  stock             Int?
+  price             Int?
+  id_category       Int?
+  id_lookbook       Int?
+  id_new_collection Int?
+  id_discount       Int?
+  id_rating         Int?
+  id_review         Int?
+  created_at        DateTime  @default(now())
+  updated_at        DateTime?
+  deleted_at        DateTime?
+}
+
+model categories {
+  id   Int     @id
+  name String? @db.VarChar
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model collections {
+  id   Int     @id
+  name String? @db.VarChar
+
+}
