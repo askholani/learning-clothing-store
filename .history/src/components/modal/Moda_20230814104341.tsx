@@ -1,5 +1,11 @@
-export default function Modal(props: { onShowRemove: any; onRemoveItem: any }) {
-  const { onShowRemove, onRemoveItem } = props
+export default function Modal(props: {
+  onShowRemove?: any
+  onRemoveItem?: any
+  bodyModal?: string
+  bodyButton?: string
+}) {
+  const { onShowRemove, onRemoveItem, bodyModal, bodyButton } = props
+  console.log('bodyButton', bodyButton)
   const handleRemoveItem = () => {
     onRemoveItem()
     onShowRemove()
@@ -13,12 +19,15 @@ export default function Modal(props: { onShowRemove: any; onRemoveItem: any }) {
       <div className='modal-box rounded-none flex flex-col'>
         <div>
           <h3 className='font-bold text-lg'>Caution</h3>
-          <p className='py-4'>do you agree to delete the item?</p>
+          <p className='py-4'>
+            {bodyModal ? bodyModal : 'do you agree to delete the item?'}
+          </p>
         </div>
         <div className='flex gap-x-4 justify-end'>
           <button className='btn btn-sm btn-neutral' onClick={handleRemoveItem}>
-            i agree
+            {bodyButton ? bodyButton : 'i agree'}
           </button>
+
           <button className='btn btn-sm btn-neutral' onClick={handleShowModal}>
             i disagree
           </button>
