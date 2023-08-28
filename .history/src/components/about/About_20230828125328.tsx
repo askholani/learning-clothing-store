@@ -16,8 +16,8 @@ export default async function About(props: {
   const { aboutProduct, dataCollections } = props
   return (
     <section className='flex flex-col gap-x-4 sm:py-8 py-4 overflow-hidden'>
-      <div className='grid grid-cols-1  md:grid-cols-5'>
-        <div className='col-span-1 md:col-span-3 uppercase'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5'>
+        <div className='col-span-1 sm:col-span-2 md:col-span-3 uppercase'>
           <motion.h1
             initial={{ x: '-100%', opacity: 0.7 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -39,7 +39,7 @@ export default async function About(props: {
           initial={{ scale: 0.8, opacity: 0.9 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className='col-span-1 md:col-span-2 grid grid-cols-2 gap-x-4 md:gap-x-2 sm:px-20 md:px-0'>
+          className='col-span-1 sm:col-span-1 grid grid-cols-2 gap-x-4 md:gap-x-2 sm:px-20 md:px-0'>
           <div className='w-full'>
             <Item height='h-full' image={aboutProduct[0].image} />
             <p className='text-end'>01</p>

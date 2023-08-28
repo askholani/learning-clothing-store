@@ -11,13 +11,13 @@ const ImageComp = dynamic(() => import('../image/ImageComp'))
 export default function Main(props: { newProduct: productsType[] }) {
   const { newProduct } = props
   return (
-    <section className='relative grid grid-cols-2 sm:grid-cols-12 mt-4 sm:gap-x-4 md:py-12 border-b-2 pb-4 overflow-hidden'>
+    <section className='grid grid-cols-2 sm:grid-cols-12 mt-4 sm:gap-x-4 md:py-12 border-b-2 pb-4 overflow-hidden'>
       <motion.div
         className='col-span-2 sm:col-span-6 relative'
         initial={{ opacity: 0.4 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false }}>
-        <div className='h-[60vh] md:h-[70vh] md:w-full'>
+        <div className='h-[60vh] md:w-full]'>
           <ImageComp
             src={newProduct[0].image}
             alt='hero-1'
@@ -28,7 +28,7 @@ export default function Main(props: { newProduct: productsType[] }) {
           />
         </div>
       </motion.div>
-      <div className='absolute w-full col-span-2 sm:col-span-6  sm:relative mt-4 sm:mt-0'>
+      <div className='col-span-2 sm:col-span-6 w-full absolute sm:relative mt-4 sm:mt-0'>
         <div className='uppercase relative'>
           <motion.div
             initial={{ x: '-100%' }}
@@ -77,7 +77,7 @@ export default function Main(props: { newProduct: productsType[] }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 className='text-3xl md:text-5xl font-bold text-end w-full'>
-                <span className='bg-primer'>of {'<<hiking>>'}</span>
+                <span className='bg-primer'>of {'<hiking>'}</span>
               </motion.div>
             </div>
           </div>

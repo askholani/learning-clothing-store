@@ -50,7 +50,7 @@ export default async function RootLayout({
                 <main className='flex flex-col gap-y-8 md:pb-10'>
                   {children}
                 </main>
-                <NavbarBottom />
+                {/* <NavbarBottom /> */}
               </CheckoutProvider>
               <Footer />
             </Suspense>

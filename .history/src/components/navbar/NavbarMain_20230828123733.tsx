@@ -24,12 +24,12 @@ export default function NavbarMain(props: {
           </Link>
         </div>
       </div>
-      <div className='shrink md:flex flex-col w-[30%] items-start hidden text-xs'>
+      <div className='shrink md:flex flex-col w-[30%] items-start  hidden text-xs'>
         <span onClick={onHandleShowList}>shop</span>
         <span onClick={onHandleShowList}>new collection</span>
         <span onClick={onHandleShowList}>lookbook</span>
       </div>
-      <div className='shrink w-[30%] md:flex flex-col items-end hidden text-xs'>
+      <div className='shrink  w-[30%] md:flex flex-col items-end hidden text-xs'>
         <Link href='/cart' className='flex justify-between lg:w-[40%] w-[60%]'>
           <span>cart</span>
           <span>[ {cartAmount} ]</span>

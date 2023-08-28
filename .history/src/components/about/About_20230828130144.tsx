@@ -16,8 +16,8 @@ export default async function About(props: {
   const { aboutProduct, dataCollections } = props
   return (
     <section className='flex flex-col gap-x-4 sm:py-8 py-4 overflow-hidden'>
-      <div className='grid grid-cols-1  md:grid-cols-5'>
-        <div className='col-span-1 md:col-span-3 uppercase'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5'>
+        <div className='col-span-1 sm:col-span-2 md:col-span-3 uppercase'>
           <motion.h1
             initial={{ x: '-100%', opacity: 0.7 }}
             whileInView={{ x: 0, opacity: 1 }}

@@ -52,6 +52,7 @@ export default function Item({
             width={500}
             height={500}
           />
+          {/* {cobaImage} */}
         </div>
         {base ? (
           <div className='flex justify-between'>

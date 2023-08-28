@@ -77,7 +77,7 @@ export default function Main(props: { newProduct: productsType[] }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 className='text-3xl md:text-5xl font-bold text-end w-full'>
-                <span className='bg-primer'>of {'<<hiking>>'}</span>
+                <span className='bg-primer'>of {'<hiking>'}</span>
               </motion.div>
             </div>
           </div>

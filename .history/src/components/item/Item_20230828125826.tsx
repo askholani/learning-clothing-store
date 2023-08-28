@@ -40,7 +40,6 @@ export default function Item({
       typeOfItemRender = shopType
       return
   }
-
   return (
     <Fragment>
       <Link href={`/shop/${keyItem}`} key={keyItem}>
@@ -52,6 +51,7 @@ export default function Item({
             width={500}
             height={500}
           />
+          {/* {cobaImage} */}
         </div>
         {base ? (
           <div className='flex justify-between'>

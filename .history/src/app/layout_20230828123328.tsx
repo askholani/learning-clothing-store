@@ -45,12 +45,12 @@ export default async function RootLayout({
         <CartProvider>
           <div className='px-4 sm:px-8 md:px-16 bg-primer text-sekunder md:py-8 uppercase'>
             <Suspense fallback={<Loading />}>
-              <Navbar />
+              {/* <Navbar /> */}
               <CheckoutProvider>
                 <main className='flex flex-col gap-y-8 md:pb-10'>
                   {children}
                 </main>
-                <NavbarBottom />
+                {/* <NavbarBottom /> */}
               </CheckoutProvider>
               <Footer />
             </Suspense>

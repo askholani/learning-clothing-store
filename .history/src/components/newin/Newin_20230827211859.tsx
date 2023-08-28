@@ -43,7 +43,7 @@ export default function Newin(props: {
       {<ListItems items={newInProduct} n='2' gap='4' />}
       <div>
         <div className='flex justify-center mt-16 md:mt-24 py-4 relative items-center'>
-          <div className='h-[25rem] md:h-[60vh] relative'>
+          <div className='h-[25rem] w-[18rem] relative'>
             <Item height='h-full' image={heroNewInProduct[0].image} />
             <div className='absolute top-0 left-0 bottom-0 right-0 bg-primer opacity-70'></div>
           </div>
@@ -56,11 +56,10 @@ export default function Newin(props: {
               brand philosophy
             </motion.h2>
             <motion.div
-              className='md:flex flex-col items-center'
               initial={{ y: 10, opacity: 0.7, scale: 0.8 }}
               whileInView={{ y: 0, opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}>
-              <h3 className='text-2xl md:text-6xl sm:text-4xl font-bold'>
+              <h3 className='text-2xl sm:text-6xl font-bold'>
                 we do not follow
               </h3>
               <div className='flex'>
@@ -69,19 +68,17 @@ export default function Newin(props: {
                   create timeless work by portraying an aesthetic that is
                   uniquely our own
                 </p>
-                <h3 className='font-bold text-2xl md:text-4xl sm:text-4xl mx-4'>
+                <h3 className='font-bold text-2xl sm:text-4xl mx-4'>
                   fashion, but
                 </h3>
                 <p className='text-xs normal-case'>
                   Aime Leon Dore is <br /> from Queens, NY.
                 </p>
               </div>
-              <h3 className='font-bold text-2xl md:text-6xl sm:text-4xl'>
+              <h3 className='font-bold text-2xl sm:text-6xl'>
                 create it for your and
               </h3>
-              <h3 className='font-bold text-2xl md:text-6xl sm:text-4xl'>
-                your soul
-              </h3>
+              <h3 className='font-bold text-2xl sm:text-6xl'>your soul</h3>
             </motion.div>
             <div className='w-full h-full flex justify-center items-center mt-20'>
               <motion.div

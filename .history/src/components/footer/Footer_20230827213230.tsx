@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <section className='flex flex-col sm:flex-row border-t justify-between py-4 text-xs mb-16 md:mb-4 md:mt-16 gap-y-4'>
+      <section className='flex flex-col sm:flex-row border-t justify-between py-4 text-xs mb-16 md:mt-16 gap-y-4'>
         <h4>ame leon dore 2023 by leibal. all rights reserved</h4>
         <div className='flex gap-x-4'>
           <h4>privacy policies</h4>

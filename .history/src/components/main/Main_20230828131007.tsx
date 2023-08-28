@@ -17,7 +17,7 @@ export default function Main(props: { newProduct: productsType[] }) {
         initial={{ opacity: 0.4 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false }}>
-        <div className='h-[60vh] md:h-[70vh] md:w-full'>
+        <div className='relative w-full'>
           <ImageComp
             src={newProduct[0].image}
             alt='hero-1'
@@ -77,7 +77,7 @@ export default function Main(props: { newProduct: productsType[] }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 className='text-3xl md:text-5xl font-bold text-end w-full'>
-                <span className='bg-primer'>of {'<<hiking>>'}</span>
+                <span className='bg-primer'>of {'<hiking>'}</span>
               </motion.div>
             </div>
           </div>
