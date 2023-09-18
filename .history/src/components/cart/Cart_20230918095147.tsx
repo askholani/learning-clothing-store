@@ -150,7 +150,7 @@ export default function Cart(props: {
           />
         </div>
         <div className='flex flex-col gap-y-2 sm:w-[60%] w-[50%]'>
-          <p className='text-sm font-bold sm:text-lg lg:text-xl tracking-wider'>
+          <p className='text-sm font-bold sm:text-lg lg:text-xl tracking-wide'>
             {name}
           </p>
           <div className='flex flex-col'>

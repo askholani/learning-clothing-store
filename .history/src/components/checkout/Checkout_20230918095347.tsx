@@ -8,7 +8,7 @@ export default function Checkout(props: { item: itemType }) {
     <Fragment>
       <li className='border-b py-4'>
         <div className='flex justify-between gap-x-4'>
-          <div className='relative lg:w-[35%]'>
+          <div className=' bg-sekunder relative'>
             <Image
               src={item.image ? item.image : ''}
               alt='default'
@@ -19,7 +19,7 @@ export default function Checkout(props: { item: itemType }) {
             />
           </div>
           <div className='flex flex-col justify-between sm:w-[60%] w-[50%]'>
-            <h2 className='text-sm font-bold sm:text-lg lg:text-xl tracking-wider'>
+            <h2 className='text-sm font-bold sm:text-lg lg:text-xl tracking-wide'>
               {item.name}
             </h2>
             <h2 className='text-xs line-clamp-4 sm:line-clamp-none sm:text-sm sm:block lg:text-base'>

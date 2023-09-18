@@ -122,7 +122,7 @@ export default function Cart(props: {
       {showModal && (
         <Modal onShowRemove={handleShowModal} onRemoveItem={handleRemove} />
       )}
-      <div className='flex gap-x-2 border-b border-sekunder md:justify-between py-4'>
+      <div className='flex gap-x-2 border-b border-sekunder md:justify-between my-2 lg:py-4'>
         <div className='flex flex-col'>
           <label>
             <input
@@ -149,10 +149,8 @@ export default function Cart(props: {
             className='object-contain w-full h-auto'
           />
         </div>
-        <div className='flex flex-col gap-y-2 sm:w-[60%] w-[50%]'>
-          <p className='text-sm font-bold sm:text-lg lg:text-xl tracking-wider'>
-            {name}
-          </p>
+        <div className='flex flex-col gap-y-2 sm:w-[60%]'>
+          <p className='text-sm font-bold sm:text-lg lg:text-xl'>{name}</p>
           <div className='flex flex-col'>
             <div className='grid grid-cols-2 text-xs sm:text-base lg:text-lg'>
               <span className='font-bold'>price</span>
@@ -171,7 +169,7 @@ export default function Cart(props: {
             <p className='font-bold text-xs sm:text-base lg:text-lg'>
               description
             </p>
-            <p className='text-xs line-clamp-4 sm:line-clamp-none sm:text-sm sm:block lg:text-base'>
+            <p className='text-xs hidden sm:text-sm sm:block lg:text-base'>
               {description}
             </p>
           </div>

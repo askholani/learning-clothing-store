@@ -150,28 +150,26 @@ export default function Cart(props: {
           />
         </div>
         <div className='flex flex-col gap-y-2 sm:w-[60%] w-[50%]'>
-          <p className='text-sm font-bold sm:text-lg lg:text-xl tracking-wider'>
-            {name}
-          </p>
+          <p className='text-sm font-bold sm:text-lg lg:text-xl'>{name}</p>
           <div className='flex flex-col'>
-            <div className='grid grid-cols-2 text-xs sm:text-base lg:text-lg'>
+            <div className='grid grid-cols-2 text-base font-bold sm:text-lg lg:text-xl'>
               <span className='font-bold'>price</span>
               <span>$90</span>
             </div>
-            <div className='grid grid-cols-2 text-xs sm:text-base lg:text-lg'>
+            <div className='grid grid-cols-2 text-base font-bold sm:text-lg lg:text-xl'>
               <span className='font-bold'>size</span>
               <span>L - large</span>
             </div>
-            <div className='grid grid-cols-2 text-xs sm:text-base lg:text-lg'>
+            <div className='grid grid-cols-2 text-base font-bold sm:text-lg lg:text-xl'>
               <span className='font-bold'>color</span>
               <span>Blue</span>
             </div>
           </div>
           <div>
-            <p className='font-bold text-xs sm:text-base lg:text-lg'>
+            <p className='font-bold text-base font-bold sm:text-lg lg:text-xl'>
               description
             </p>
-            <p className='text-xs line-clamp-4 sm:line-clamp-none sm:text-sm sm:block lg:text-base'>
+            <p className='text-xs hidden sm:text-sm sm:block lg:text-base'>
               {description}
             </p>
           </div>

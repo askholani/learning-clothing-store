@@ -8,7 +8,7 @@ export default function Checkout(props: { item: itemType }) {
     <Fragment>
       <li className='border-b py-4'>
         <div className='flex justify-between gap-x-4'>
-          <div className='relative lg:w-[35%]'>
+          <div className=' bg-sekunder relative'>
             <Image
               src={item.image ? item.image : ''}
               alt='default'
@@ -19,18 +19,15 @@ export default function Checkout(props: { item: itemType }) {
             />
           </div>
           <div className='flex flex-col justify-between sm:w-[60%] w-[50%]'>
-            <h2 className='text-sm font-bold sm:text-lg lg:text-xl tracking-wider'>
+            <h2 className='text-sm font-bold sm:text-lg lg:text-xl'>
               {item.name}
-            </h2>
-            <h2 className='text-xs line-clamp-4 sm:line-clamp-none sm:text-sm sm:block lg:text-base'>
-              {item.description}
             </h2>
             <div className='flex flex-col gap-y-4'>
               <div className='flex flex-col text-xs gap-y-2'>
                 <div className='grid grid-cols-2  text-xs sm:text-base lg:text-lg'>
                   <h3 className='font-bold'>total</h3>
                   <h3>
-                    $ {item.price && item.qty ? item.price * item.qty : ''}
+                    ${item.price && item.qty ? item.price * item.qty : ''}
                   </h3>
                 </div>
                 <div className='grid grid-cols-2  text-xs sm:text-base lg:text-lg'>
@@ -44,9 +41,7 @@ export default function Checkout(props: { item: itemType }) {
                   <h3>black white</h3>
                 </div>
               </div>
-              <h2 className='text-xs sm:text-base lg:text-lg font-bold tracking-widest'>
-                remove
-              </h2>
+              <h2>remove</h2>
             </div>
           </div>
         </div>

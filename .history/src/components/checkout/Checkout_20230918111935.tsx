@@ -8,7 +8,7 @@ export default function Checkout(props: { item: itemType }) {
     <Fragment>
       <li className='border-b py-4'>
         <div className='flex justify-between gap-x-4'>
-          <div className='relative lg:w-[35%]'>
+          <div className='relative lg:w-[30%]'>
             <Image
               src={item.image ? item.image : ''}
               alt='default'

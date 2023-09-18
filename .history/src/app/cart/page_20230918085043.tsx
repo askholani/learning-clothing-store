@@ -89,10 +89,10 @@ export default function Page() {
         />
       )}
       <section className='overflow-x-auto flex flex-col '>
-        <h1 className='text-3xl sm:text-4xl md:text-5xl font-extrabold py-4 border-b md:mb-4 lg:mb-6'>
+        <h1 className='text-3xl sm:text-4xl md:text-5xl font-extrabold py-4 border-b'>
           cart
         </h1>
-        <div className='flex flex-col mt-4'>
+        <div className='flex flex-col gap-y-5 mt-4'>
           <ListCarts state={items} dispatch={dispatch} />
         </div>
       </section>
