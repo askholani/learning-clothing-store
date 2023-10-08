@@ -1,0 +1,149 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model products {
+  id                Int             @id(map: "Products_pkey")
+  name              String?
+  description       String?
+  image             String?
+  stock             Int?
+  price             Int?
+  id_category       Int?
+  id_lookbook       Int?
+  id_new_collection Int?
+  id_rating         Int?
+  id_review         Int?
+  created_at        DateTime        @default(now())
+  updated_at        DateTime?
+  deleted_at        DateTime?
+  discount          Int?
+  sizes             String[]        @db.VarChar
+  colors            String[]        @db.VarChar
+  product_images    product_images?
+}
+
+model categories {
+  id   Int     @id
+  name String? @db.VarChar
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model collections {
+  id   Int     @id
+  name String? @db.VarChar
+}
+
+model product_images {
+  id_product Int      @id
+  images     String[] @db.VarChar
+  products   products @relation(fields: [id_product], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "product_images")
+}
+
+model detail_transactions {
+  id_detail_trasaction Int       @id
+  id_transaction       Int?
+  id_product           Int?
+  quantity             Int?
+  size                 String?   @db.VarChar
+  color                String?   @db.VarChar
+  created_at           DateTime? @db.Time(6)
+  shipping_methode     String?   @db.VarChar
+  payment_methode      String?   @db.VarChar
+}
+
+model transactions {
+  id_trasaction  Int        @id
+  id_user        Int?
+  total_quantity Int?
+  total_price    Int?
+  created_at     DateTime[] @db.Time
+}
+
+model detail_transactions_without_login {
+  id_detail_transactions_without_login Int       @id
+  id_transactions                      Int?
+  id_product                           Int?
+  quantity                             Int?
+  size                                 String?   @db.VarChar
+  created_at                           DateTime? @db.Timestamptz(6)
+  email                                String?   @db.VarChar
+  phone                                Int?
+  address                              String?   @db.VarChar
+  name                                 String?   @db.VarChar
+  shipping_methode                     String?   @db.VarChar
+  payment_method                       String?   @db.VarChar
+}
+
+model Account {
+  id                 String  @id @default(cuid()) 
+  // @id : primary key.
+  // @default : secaro otomatis akan diisi ketika penambahan data ke tabel.
+  // cuuid () : fungsi yang menjamin setiap kolom id akan diisi nilai unik.
+
+  userId             String  @map("user_id")
+  // @map("user_id"): memetakan userId ke kolom dengan nama user_id di datbase.
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String? @db.Text
+  // ? opsional (boleh memiliki nilai kosong)
+  // @db.Text : tipe data text.
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // @relation : relasi antar tabel
+  // relasi antar Model user pada kolom id dengan usertId pada model Account.
+  // onDelete : Cascade :: data pada tabel user maka akan menghapus data pada tabel account.
+
+  @@unique([provider, providerAccountId])
+  // kombinasi nilai dari kedua kolom tersebut harus unik.
+  // "google" - "123" dan "google" - "123" : tidak boleh.
+  // "google" - "321" dan "google" - "123" : boleh/
+
+  @@map("accounts")
+  // memetakan Model Accounts dengan tabel accounts.
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  accounts      Account[]
+  // relasi dengan Model Account 
+  // [] : 1 user bisa memiliki banyak account
+  sessions      Session[]
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}

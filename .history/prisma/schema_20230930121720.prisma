@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model products {
+  id                Int             @id(map: "Products_pkey")
+  name              String?
+  description       String?
+  image             String?
+  stock             Int?
+  price             Int?
+  id_category       Int?
+  id_lookbook       Int?
+  id_new_collection Int?
+  id_rating         Int?
+  id_review         Int?
+  created_at        DateTime        @default(now())
+  updated_at        DateTime?
+  deleted_at        DateTime?
+  discount          Int?
+  sizes             String[]        @db.VarChar
+  colors            String[]        @db.VarChar
+  product_images    product_images?
+}
+
+model categories {
+  id   Int     @id
+  name String? @db.VarChar
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model collections {
+  id   Int     @id
+  name String? @db.VarChar
+}
+
+model product_images {
+  id_product Int      @id
+  images     String[] @db.VarChar
+  products   products @relation(fields: [id_product], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "product_images")
+}
+
+model detail_transactions {
+  id_detail_trasaction Int       @id
+  id_transaction       Int?
+  id_product           Int?
+  quantity             Int?
+  size                 String?   @db.VarChar
+  color                String?   @db.VarChar
+  created_at           DateTime? @db.Time(6)
+  shipping_methode     String?   @db.VarChar
+  payment_methode      String?   @db.VarChar
+}
+
+model transactions {
+  id_trasaction  Int        @id
+  id_user        Int?
+  total_quantity Int?
+  total_price    Int?
+  created_at     DateTime[] @db.Time
+}
+
+model detail_transactions_without_login {
+  id_detail_transactions_without_login Int       @id
+  id_transactions                      Int?
+  id_product                           Int?
+  quantity                             Int?
+  size                                 String?   @db.VarChar
+  created_at                           DateTime? @db.Timestamptz(6)
+  email                                String?   @db.VarChar
+  phone                                Int?
+  address                              String?   @db.VarChar
+  name                                 String?   @db.VarChar
+  shipping_methode                     String?   @db.VarChar
+  payment_method                       String?   @db.VarChar
+}
