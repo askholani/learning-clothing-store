@@ -1,0 +1,9 @@
+import { cookies } from 'next/headers'
+import exp from '@components/hooks/exp'
+import { NextRequest, NextResponse } from 'next/server'
+
+export async function POST(req: NextRequest, res: NextResponse) {
+  const reqData = await req.json()
+  console.log(reqData)
+  return typeof NextResponse.json({ reqData })
+}
