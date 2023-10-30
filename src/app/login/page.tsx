@@ -49,9 +49,7 @@ export default function Page() {
             <div className='flex flex-col w-full justify-center mt-5 pt-10 border-t border-sekunder gap-y-4'>
               <div
                 className='flex h-10 w-full items-center gap-x-4 bg-sekunder  px-2 py-1 text-primer cursor-pointer shadow-2xl'
-                onClick={() =>
-                  signIn('email', { callbackUrl: 'http://localhost:3000/shop' })
-                }>
+                onClick={() => signIn('email')}>
                 <label htmlFor='' className='text-3xl font-bold'>
                   @
                 </label>
@@ -59,9 +57,7 @@ export default function Page() {
               </div>
               <div
                 className='flex h-10 w-full items-center gap-x-4 bg-sekunder  px-2 py-1 cursor-pointer shadow-2xl'
-                onClick={() =>
-                  signIn('google', { callbackUrl: 'http:localhost:3000/shop' })
-                }>
+                onClick={() => signIn('google')}>
                 <svg
                   className='w-10 h-10'
                   xmlns='http://www.w3.org/2000/svg'

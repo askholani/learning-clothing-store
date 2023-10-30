@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client'
 export const prisma = new PrismaClient()
 
 const urlApiBase = process.env.NEXT_LOCAL_DEV
-export const api = urlApiBase ? urlApiBase : ''
+export const api = 'http://localhost:3000/api'
 
 // product
 export async function getProducts(query?: string) {
